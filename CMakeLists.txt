@@ -16,4 +16,8 @@ set (source_files
 	${CMAKE_SOURCE_DIR}/src/main.cpp
 )
 
+add_subdirectory(${CMAKE_SOURCE_DIR}/external/sdl EXCLUDE_FROM_ALL)
+
 add_executable(cmake-sdl3-starter ${source_files})
+target_link_libraries(cmake-sdl3-starter PRIVATE SDL3::SDL3)
+
